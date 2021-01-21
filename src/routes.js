@@ -1,9 +1,30 @@
-import Home from "./components/views/Home";
-import Portfolio from "./components/views/Portfolio";
-import Stocks from "./components/views/Stocks";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-export default [
-  {path: '/', component: Home},
-  {path: '/portfolio', component: Portfolio},
-  {path: '/stocks', component: Stocks}
-]
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import('./components/views/Home'),
+  },
+  {
+    path: '/portfolio',
+    name: 'Portfolio',
+    component: () => import('./components/views/Portfolio'),
+  },
+  {
+    path: '/stocks',
+    name: 'Stocks',
+    component: () => import('./components/views/Stocks'),
+  },
+];
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+});
+
+export default router;

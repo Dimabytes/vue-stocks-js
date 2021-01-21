@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueResource from 'vue-resource'
 import VueRouter from "vue-router";
-import routes from "./routes";
+import router from "./routes";
 import store from "./store/store";
 
 Vue.use(VueRouter)
@@ -13,12 +13,6 @@ Vue.filter('currency', value => {
 })
 
 Vue.http.options.root = 'https://teststocks-7dd7a.firebaseio.com/'
-
-const router = new VueRouter({
-  routes,
-  mode: 'history',
-
-})
 
 new Vue({
   el: '#app',
