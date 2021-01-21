@@ -5,3 +5,22 @@
 * ## Vue 2
 * ## Firebase
 
+## Base scripts
+
+* ### Install
+
+```
+npm install
+```
+
+* ### Start
+
+```
+npm run serve
+```
+
+* ### Build
+
+```
+npm run build
+```
